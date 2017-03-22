@@ -289,7 +289,7 @@ export function analyzeAndValidateNgModules(
     const messages = result.symbolsMissingModule.map(
         s =>
             `Cannot determine the module for class ${s.name} in ${s.filePath}! Add ${s.name} to the NgModule to fix it.`);
-    throw syntaxError(messages.join('\n'));
+    console.warn(messages.join('\n'));
   }
   return result;
 }
