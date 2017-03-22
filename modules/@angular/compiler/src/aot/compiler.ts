@@ -335,7 +335,7 @@ export function analyzeAndValidateNgModules(
   if (result.symbolsMissingModule && result.symbolsMissingModule.length) {
     const messages = result.symbolsMissingModule.map(
         s => `Cannot determine the module for class ${s.name} in ${s.filePath}!`);
-    throw new Error(messages.join('\n'));
+    console.warn(messages.join('\n'));
   }
   return result;
 }
